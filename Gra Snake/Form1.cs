@@ -82,8 +82,31 @@ namespace Gra_Snake
                     snake.rosnieSnake();
                     food.polozenie(rndFood);
                 }
+                kolizje();
             }
+
             this.Invalidate();
+        }
+        public void kolizje()
+        {
+            for (int i = 1; i < snake.SnakeRec.Length; i++)
+            {
+                if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[1]))
+                {
+                    timer1.Enabled = false;
+                    MessageBox.Show("Game Over");
+                }
+            }
+            if (snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 290)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Game Over");
+            }
+            if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 290)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Game Over");
+            }
         }
     }
 }
