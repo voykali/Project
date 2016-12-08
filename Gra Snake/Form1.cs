@@ -15,6 +15,11 @@ namespace Gra_Snake
         Graphics tlo;
         Snake snake = new Snake();
 
+        bool gora = false;
+        bool dol = false;
+        bool prawo = false;
+        bool lewo = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +33,34 @@ namespace Gra_Snake
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyData == Keys.Down && gora == false)
+            {
+                dol = true;
+                gora = false;
+                prawo = false;
+                lewo = false;
+            }
+            if (e.KeyData == Keys.Up && dol == false)
+            {
+                dol = false;
+                gora = true;
+                prawo = false;
+                lewo = false;
+            } 
+            if (e.KeyData == Keys.Right && lewo == false)
+            {
+                dol = false;
+                gora = false;
+                prawo = true;
+                lewo = false;
+            } 
+            if (e.KeyData == Keys.Left && prawo == false)
+            {
+                dol = false;
+                gora = false;
+                prawo = false;
+                lewo = true;
+            }
         }
     }
 }

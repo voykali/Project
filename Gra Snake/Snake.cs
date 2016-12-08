@@ -35,5 +35,13 @@ namespace Gra_Snake
                 tlo.FillRectangle(brush, rec);
             }
         }
+        public void rysujSnake()
+        {
+            for (int i = snakeRect.Length - 1; i > 0; i--)
+            {
+                snakeRect[i] = snakeRect[i - 1];
+            }
+        }
+
     }
 }
