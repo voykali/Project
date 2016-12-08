@@ -40,6 +40,17 @@ namespace Gra_Snake
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyData == Keys.Space)
+            {
+                timer1.Enabled = true;
+                spacjaLabel.Text = "";
+                dol = false;
+                gora = false;
+                prawo = false;
+                lewo = false;
+
+            }
+
             if (e.KeyData == Keys.Down && gora == false)
             {
                 dol = true;
@@ -87,11 +98,12 @@ namespace Gra_Snake
                     snake.rosnieSnake();
                     food.polozenie(rndFood);
                 }
-                kolizje();
             }
+                kolizje();
 
             this.Invalidate();
         }
+
         public void kolizje()
         {
             for (int i = 1; i < snake.SnakeRec.Length; i++)
@@ -100,23 +112,24 @@ namespace Gra_Snake
                 {
                     reset();
                 }
-            }
-            if (snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 290)
-            {
-                reset();
-            }
-            if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 290)
-            {
-                reset();
+
+                if (snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 290)
+                {
+                    reset();
+                }
+                if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 290)
+                {
+                    reset();
+                }
             }
         }
         public void reset()
         {
             timer1.Enabled = false;
-            MessageBox.Show("Game Over");
-            snakePktLabel.Text = "0"
+            MessageBox.Show("Game Over. Twój wynik " + score);
+            snakePktLabel.Text = "0";
             score = 0;
-            spacjaLabel = "Wciśnij Spację by zacząć";
+            spacjaLabel.Text = "Wciśnij Spację by zacząć";
             snake = new Snake();
         }
     }
