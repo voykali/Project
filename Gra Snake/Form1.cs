@@ -75,10 +75,11 @@ namespace Gra_Snake
             if (prawo) { snake.wPrawo(); }
             if (lewo) { snake.wLewo(); }
 
-            for (int i = 0; i < snake.snakeRect.Length; i++)
+            for (int i = 0; i < snake.SnakeRec.Length; i++)
             {
-                if (snake.snakeRect[i].IntersectsWith(food.foodRec))
+                if (snake.SnakeRec[i].IntersectsWith(food.foodRec))
                 {
+                    snake.rosnieSnake();
                     food.polozenie(rndFood);
                 }
             }
