@@ -108,7 +108,7 @@ namespace Gra_Snake
         {
             for (int i = 1; i < snake.SnakeRec.Length; i++)
             {
-                if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[1]))
+                if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[i]))
                 {
                     reset();
                 }
