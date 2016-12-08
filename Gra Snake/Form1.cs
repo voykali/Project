@@ -17,6 +17,8 @@ namespace Gra_Snake
         Snake snake = new Snake();
         Jedzenie food;
 
+        int score = 0;
+
         bool gora = false;
         bool dol = false;
         bool prawo = false;
@@ -70,6 +72,8 @@ namespace Gra_Snake
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            snakePktLabel.Text = Convert.ToString(score);
+
             if (gora) { snake.wGore(); }
             if (dol) { snake.wDol(); }
             if (prawo) { snake.wPrawo(); }
@@ -79,6 +83,7 @@ namespace Gra_Snake
             {
                 if (snake.SnakeRec[i].IntersectsWith(food.foodRec))
                 {
+                    score += 10;
                     snake.rosnieSnake();
                     food.polozenie(rndFood);
                 }
@@ -93,20 +98,26 @@ namespace Gra_Snake
             {
                 if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[1]))
                 {
-                    timer1.Enabled = false;
-                    MessageBox.Show("Game Over");
+                    reset();
                 }
             }
             if (snake.SnakeRec[0].X < 0 || snake.SnakeRec[0].X > 290)
             {
-                timer1.Enabled = false;
-                MessageBox.Show("Game Over");
+                reset();
             }
             if (snake.SnakeRec[0].Y < 0 || snake.SnakeRec[0].Y > 290)
             {
-                timer1.Enabled = false;
-                MessageBox.Show("Game Over");
+                reset();
             }
+        }
+        public void reset()
+        {
+            timer1.Enabled = false;
+            MessageBox.Show("Game Over");
+            snakePktLabel.Text = "0"
+            score = 0;
+            spacjaLabel = "Wciśnij Spację by zacząć";
+            snake = new Snake();
         }
     }
 }
