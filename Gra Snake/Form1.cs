@@ -34,13 +34,6 @@ namespace Gra_Snake
             food.rysujJedzenie(tlo);
             snake.rysujSnake(tlo);
 
-            for (int i = 0; i < snake.snakeRect.Length; i++)
-            {
-                if(snake.snakeRect[i].IntersectsWith(food.foodRec))
-                {
-                    food.polozenie(rndFood);
-                }
-            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -81,6 +74,14 @@ namespace Gra_Snake
             if (dol) { snake.wDol(); }
             if (prawo) { snake.wPrawo(); }
             if (lewo) { snake.wLewo(); }
+
+            for (int i = 0; i < snake.snakeRect.Length; i++)
+            {
+                if (snake.snakeRect[i].IntersectsWith(food.foodRec))
+                {
+                    food.polozenie(rndFood);
+                }
+            }
             this.Invalidate();
         }
     }

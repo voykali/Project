@@ -9,10 +9,14 @@ namespace Gra_Snake
 {
     public class Snake
     {
-        public Rectangle[] snakeRect;
+        private Rectangle[] snakeRect;
         private SolidBrush brush;
         private int x, y, szerokosc, wysoko;
 
+        public Rectangle[] SnakeRec
+        {
+            get { return snakeRect; }
+        }
         public Snake()
         {
             snakeRect = new Rectangle[2];
@@ -61,6 +65,12 @@ namespace Gra_Snake
         {
             rysujSnake();
             snakeRect[0].X -= 10;
+        }
+        public void rosnieSnake()
+        {
+            List<Rectangle> rec = snakeRect.ToList();
+            rec.Add(new Rectangle(snakeRect[snakeRect.Length - 1].X, snakeRect[snakeRect.Length - 1].Y, szerokosc, wysoko));
+            snakeRect = rec.ToArray();
         }
     }
 }
