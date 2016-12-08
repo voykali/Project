@@ -62,5 +62,10 @@ namespace Gra_Snake
                 lewo = true;
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
