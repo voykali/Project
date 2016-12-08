@@ -65,7 +65,11 @@ namespace Gra_Snake
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            if (gora) { snake.wGore(); }
+            if (dol) { snake.wDol(); }
+            if (prawo) { snake.wPrawo(); }
+            if (lewo) { snake.wLewo(); }
+            this.Invalidate();
         }
     }
 }
