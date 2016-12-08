@@ -42,6 +42,25 @@ namespace Gra_Snake
                 snakeRect[i] = snakeRect[i - 1];
             }
         }
-
+        public void wDol()
+        {
+            rysujSnake();
+            snakeRect[0].Y += 10;
+        }
+        public void wGore()
+        {
+            rysujSnake();
+            snakeRect[0].Y -= 10;
+        }
+        public void wPrawo()
+        {
+            rysujSnake();
+            snakeRect[0].X += 10;
+        }
+        public void wLewo()
+        {
+            rysujSnake();
+            snakeRect[0].X -= 10;
+        }
     }
 }
