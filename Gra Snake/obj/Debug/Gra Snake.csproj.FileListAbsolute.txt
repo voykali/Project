@@ -1,1 +1,9 @@
 c:\users\wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\bin\Debug\Gra Snake.exe.config
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\bin\Debug\Gra Snake.exe
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\bin\Debug\Gra Snake.pdb
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra Snake.csprojResolveAssemblyReference.cache
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra_Snake.Form1.resources
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra_Snake.Properties.Resources.resources
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra Snake.csproj.GenerateResource.Cache
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra Snake.exe
+C:\Users\Wojciech\documents\visual studio 2013\Projects\Wąż\Gra Snake\Gra Snake\obj\Debug\Gra Snake.pdb

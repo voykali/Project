@@ -12,6 +12,9 @@ namespace Gra_Snake
 {
     public partial class Form1 : Form
     {
+        Graphics tlo;
+        Snake snake = new Snake();
+
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +22,8 @@ namespace Gra_Snake
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
+            tlo = e.Graphics;
+            snake.rysujSnake(tlo);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
