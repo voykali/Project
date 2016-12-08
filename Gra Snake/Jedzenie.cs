@@ -28,7 +28,9 @@ namespace Gra_Snake
         }
         public void rysujJedzenie(Graphics tlo)
         {
-
+            foodRec.X = x;
+            foodRec.Y = y;
+            tlo.FillRectangle(brush, foodRec);
         }
     }
 }

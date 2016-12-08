@@ -12,8 +12,10 @@ namespace Gra_Snake
 {
     public partial class Form1 : Form
     {
+        Random rndFood = new Random();
         Graphics tlo;
         Snake snake = new Snake();
+        Jedzenie food;
 
         bool gora = false;
         bool dol = false;
@@ -23,11 +25,13 @@ namespace Gra_Snake
         public Form1()
         {
             InitializeComponent();
+            food = new Jedzenie(rndFood);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             tlo = e.Graphics;
+            food.rysujJedzenie(tlo);
             snake.rysujSnake(tlo);
         }
 
